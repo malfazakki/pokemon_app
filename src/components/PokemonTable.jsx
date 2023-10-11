@@ -15,7 +15,7 @@ import Box from "@mui/material/Box";
 
 export default function PokemonTable() {
   const [pokemons, setPokemons] = useState([]);
-  const [currentUrl, setCurrentUrl] = useState("https://pokeapi.co/api/v2/pokemon");
+  const [currentUrl, setCurrentUrl] = useState("https://pokeapi.co/api/v2/pokemon?limit=10");
   const [nextPage, setNextPage] = useState("");
   const [previousPage, setPreviousPage] = useState("");
   const [loading, setLoading] = useState(false);
