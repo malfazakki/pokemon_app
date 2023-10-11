@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function PokemonDetailTable() {
   const [name, setName] = useState("");
@@ -11,8 +11,8 @@ export default function PokemonDetailTable() {
   const [weight, setWeight] = useState("");
   const [thumb, setThumb] = useState("");
   const [image, setImage] = useState("");
-
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     // fetch pokemon data
@@ -97,6 +97,14 @@ export default function PokemonDetailTable() {
             <p className="capitalize">{weight}</p>
           </div>
           {/* base exp end */}
+          <div className="flex justify-start w-full">
+            <button
+              className="mt-[3rem] px-4 ml-[-20px] mb-[-10px] py-1 bg-green-700 text-white rounded-s-2xl hover:bg-green-500"
+              onClick={() => navigate("/pokemon")}
+            >
+              Back to Pokemon List
+            </button>
+          </div>
         </div>
       </div>
     </div>

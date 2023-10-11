@@ -110,10 +110,18 @@ export default function PokemonTable() {
           </TableContainer>
         </Box>
         <div className="flex w-full justify-center mt-10 gap-5">
-          <button className="w-[100px] py-1 bg-green-700 text-white rounded-sm" onClick={() => goPreviousPage()}>
+          <button
+            className="w-[100px] py-1 bg-green-700 text-white rounded-sm hover:bg-green-500 disabled:bg-slate-400"
+            disabled={previousPage === null}
+            onClick={() => goPreviousPage()}
+          >
             Previous
           </button>
-          <button className="w-[100px] py-1 bg-green-700 text-white rounded-sm" onClick={() => goNextPage()}>
+          <button
+            className="w-[100px] py-1 bg-green-700 text-white rounded-sm hover:bg-green-500 disabled:bg-slate-400"
+            disabled={nextPage === null}
+            onClick={() => goNextPage()}
+          >
             Next
           </button>
         </div>
